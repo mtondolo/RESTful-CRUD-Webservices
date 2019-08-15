@@ -18,9 +18,14 @@ public class EmployeeDAO {
 		Employee emp1 = new Employee("E01", "John", "Accountant");
 		Employee emp2 = new Employee("E02", "Eddie", "Sales");
 		Employee emp3 = new Employee("E03", "Dave", "Driver");	
+		
+		empMap.put(emp1.getEmpNO(), emp1);
+		empMap.put(emp2.getEmpNO(), emp2);
+		empMap.put(emp3.getEmpNO(), emp3);
+		
 	}
 	
-	public List<Employee> getAllEmployees(){
+	public static List<Employee> getAllEmployees(){
 		Collection<Employee> c = empMap.values();
 		List<Employee> list = new ArrayList<Employee>();
 		list.addAll(c);
