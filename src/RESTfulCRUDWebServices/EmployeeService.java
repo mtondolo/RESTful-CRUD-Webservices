@@ -18,4 +18,10 @@ public class EmployeeService {
 		return listOfEmployees;
 	}
 	
+	@POST
+	@Produces({MediaType.APPLICATION_JSON})
+	public Employee addEmployee(Employee emp) {
+		return EmployeeDAO.addEmployee(emp);
+	}
+	
 }

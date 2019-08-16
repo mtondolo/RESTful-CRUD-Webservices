@@ -13,7 +13,8 @@ public class EmployeeDAO {
 	static {
 		initEmps();
 	}
-
+	
+	// Pumping-in some default data
 	private static void initEmps() {
 		Employee emp1 = new Employee("E01", "John", "Accountant");
 		Employee emp2 = new Employee("E02", "Eddie", "Sales");
@@ -30,6 +31,11 @@ public class EmployeeDAO {
 		List<Employee> list = new ArrayList<Employee>();
 		list.addAll(c);
 		return list;
+	}
+	
+	public static Employee addEmployee(Employee emp) {
+		empMap.put(emp.getEmpNO(), emp);
+		return emp;
 	}
 	
 	List<Employee>list;
