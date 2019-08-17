@@ -38,6 +38,11 @@ public class EmployeeDAO {
 		return emp;
 	}
 	
+	public static Employee getEmployee(String empNO) {
+		return empMap.get(empNO);
+		 
+	}
+	
 	List<Employee>list;
 
 }
