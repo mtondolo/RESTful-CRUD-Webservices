@@ -2,6 +2,7 @@ package RESTfulCRUDWebServices;
 
 import java.util.List;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -32,5 +33,18 @@ public class EmployeeService {
 	public Employee getEmployee(@PathParam("empNO")String empNO) {
 		return EmployeeDAO.getEmployee(empNO);
 	}
+		
+	@PUT
+	@Produces({MediaType.APPLICATION_JSON})
+	public Employee updateEmployee(Employee emp) {
+		return EmployeeDAO.updateEmployee(emp);
+	}
 	
+	@DELETE
+	@Path("/{empNO}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public void deleteEmployee(@PathParam("empNO")String empNO) {
+		EmployeeDAO.deleteEmployee(empNO);
+	}
+
 }

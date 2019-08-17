@@ -43,6 +43,16 @@ public class EmployeeDAO {
 		 
 	}
 	
+	public static Employee updateEmployee(Employee emp) {
+		empMap.put(emp.getEmpNO(), emp);
+		return emp;
+	}
+	
+	public static void deleteEmployee(String empNO) {
+		empMap.remove(empNO);
+	}
+	   
+	
 	List<Employee>list;
 
 }
